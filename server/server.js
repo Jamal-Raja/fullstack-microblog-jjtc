@@ -1,5 +1,8 @@
 const sequelize = require("./src/config/database-config");
 
+const express = require("express");
+const app = express();
+
 const runServer = async () => {
   try {
     console.log("Attempting to connect to MySQL DB...");
@@ -28,4 +31,3 @@ const runServer = async () => {
 };
 
 runServer();
-
