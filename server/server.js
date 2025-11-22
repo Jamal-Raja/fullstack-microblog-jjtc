@@ -29,5 +29,5 @@ const runServer = async () => {
     process.exit(1);
   }
 };
-
+console.log("JAMAL ADDED THIS");
 runServer();
