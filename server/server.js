@@ -4,6 +4,10 @@ const sequelize = require("./src/config/database-config");
 const express = require("express");
 const app = express();
 
+// Import models to sync with database
+require("./src/models/userModel");
+require("./src/models/postModel");
+
 const runServer = async () => {
   try {
     console.log("Attempting to connect to MySQL DB...");
@@ -19,7 +23,7 @@ const runServer = async () => {
     );
 
     // Syncs all defined models with the database
-    await sequelize.sync();
+    await sequelize.sync({ force: true });
     console.log("Models synced with DB.");
 
     // Starts the Express server
