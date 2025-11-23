@@ -41,5 +41,3 @@ const runServer = async () => {
 };
 
 runServer();
-
-console.log("changes!");
