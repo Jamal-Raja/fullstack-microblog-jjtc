@@ -54,17 +54,6 @@ const Post = sequelize.define("Post", {
     type: DataTypes.INTEGER,
     defaultValue: 0,
   },
-
-  // Foreign Key to User Model
-  user_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    // Establishes relationship between Post and User models
-    references: {
-      model: require("./userModel"),
-      key: "id",
-    },
-  },
 });
 
 module.exports = Post;

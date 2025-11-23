@@ -5,8 +5,7 @@ const express = require("express");
 const app = express();
 
 // Import models to sync with database
-require("./src/models/userModel");
-require("./src/models/postModel");
+require("./src/models/index");
 
 const runServer = async () => {
   try {
