@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "How to Stay Productive Whilst Working Remotely",
+    "content": "Remote working can be a challenge, but with the right structure and discipline it becomes a powerful way to improve your work–life balance. In this post, I share practical steps to remain productive.",
+    "imageURL": "https://example.com/images/productivity.jpg",
+    "likeCount": 4,
+    "commentCount": 2,
+    "user_id": 1,
+    "createdAt": "2025-01-15T08:20:00Z",
+    "updatedAt": "2025-01-15T08:20:00Z"
+  },
+  {
+    "id": 2,
+    "title": "My Top Five Travel Destinations for the Spring",
+    "content": "Spring is the perfect season to explore new destinations. These five locations offer great scenery, culture, and unforgettable experiences.",
+    "imageURL": null,
+    "likeCount": 7,
+    "commentCount": 1,
+    "user_id": 2,
+    "createdAt": "2025-01-17T11:00:00Z",
+    "updatedAt": "2025-01-17T11:00:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Why Local Football Clubs Matter to Communities",
+    "content": "Local clubs play a vital role in building strong communities, providing social spaces, and encouraging healthy lifestyles.",
+    "imageURL": "https://example.com/images/football.png",
+    "likeCount": 2,
+    "commentCount": 1,
+    "user_id": 3,
+    "createdAt": "2025-01-18T16:50:00Z",
+    "updatedAt": "2025-01-18T16:50:00Z"
+  }
+]

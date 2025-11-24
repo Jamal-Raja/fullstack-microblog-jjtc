@@ -1,5 +1,7 @@
 // Loads environment variables so the database settings are available
-require("dotenv").config({ quiet: true });
+require("dotenv").config({
+  quiet: true,
+});
 
 const { Sequelize } = require("sequelize");
 
