@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "comment": "Really helpful tips, thanks for sharing!",
+    "user_id": 2,
+    "post_id": 1,
+    "createdAt": "2025-01-15T12:00:00Z",
+    "updatedAt": "2025-01-15T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "comment": "I needed this today. Great read.",
+    "user_id": 3,
+    "post_id": 1,
+    "createdAt": "2025-01-15T12:45:00Z",
+    "updatedAt": "2025-01-15T12:45:00Z"
+  },
+  {
+    "id": 3,
+    "comment": "Fantastic list. I’ve been to two of these places!",
+    "user_id": 1,
+    "post_id": 2,
+    "createdAt": "2025-01-17T13:05:00Z",
+    "updatedAt": "2025-01-17T13:05:00Z"
+  },
+  {
+    "id": 4,
+    "comment": "Local clubs really do make a huge difference.",
+    "user_id": 2,
+    "post_id": 3,
+    "createdAt": "2025-01-18T18:00:00Z",
+    "updatedAt": "2025-01-18T18:00:00Z"
+  }
+]

@@ -2,7 +2,7 @@ const mysql = require("mysql2/promise");
 /**
  * This function checks whether the database named in the environment file exists.
  * If it doesn’t, it creates it before the rest of the app tries to connect.
-*/
+ */
 async function ensureDatabaseExists() {
   // Pull in the database settings from the environment file
   const { DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME } = process.env;
