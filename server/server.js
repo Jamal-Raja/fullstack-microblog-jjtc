@@ -41,3 +41,5 @@ const runServer = async () => {
 };
 
 runServer();
+
+console.log("hit from server");
