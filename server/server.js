@@ -22,7 +22,7 @@ const runServer = async () => {
     );
 
     // Syncs all defined models with the database
-    await sequelize.sync({ force: true });
+    await sequelize.sync();
     console.log("Models synced with DB.");
 
     // Starts the Express server
