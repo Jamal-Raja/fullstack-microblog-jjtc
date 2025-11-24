@@ -29,4 +29,3 @@ const seedDB = async () => {
 
 seedDB();
 
-console.log("ENVV SHITT --> ", process.env.DB_NAME, process.env.DB_USERNAME);
