@@ -28,4 +28,3 @@ const seedDB = async () => {
 };
 
 seedDB();
-
