@@ -1,8 +1,20 @@
 const ensureDatabaseExists = require("./src/config/create-db");
+const globalErrorHandler = require("./middleware/globalErrorHandler");
+const sequalizeErrorHandler = require("./middleware/sequalizeErrorHandler");
 const sequelize = require("./src/config/database-config");
 
 const express = require("express");
 const app = express();
+
+// ROUTES
+const userRotes = require("./routes/userRoutes");
+
+// MIDDLEWARE
+app.use(express.json());
+app.use("/api/users", userRotes);
+
+app.use(sequalizeErrorHandler);
+app.use(globalErrorHandler);
 
 // Import models to sync with database
 require("./src/models/index");

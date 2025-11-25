@@ -65,7 +65,6 @@ const User = sequelize.define(
      */
     passwordHash: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
 
     // Optional biography for the user's profile
