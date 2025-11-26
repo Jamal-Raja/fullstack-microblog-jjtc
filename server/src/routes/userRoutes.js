@@ -13,7 +13,6 @@ router.route("/login").post(userController.loginUser);
 // Private (user must be logged in)
 router
   .route("/:id")
-  .delete(authenticateToken, verifyOwnership, userController.deleteUser);
-//   .get(authenticateToken, verifyOwnership, userController.fetchUserBlogs)
+  .delete(authenticateToken, verifyOwnership, userController.deleteUser); // protected route
 
 module.exports = router;

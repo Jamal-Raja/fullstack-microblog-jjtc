@@ -36,6 +36,8 @@ exports.registerUser = async (req, res, next) => {
     password,
     passwordConfirmation,
   });
+  // Remove passwordHash from user data before sending response
+  delete newUser.dataValues.passwordHash;
 
   res.status(201).json({
     status: "success",
@@ -78,18 +80,19 @@ exports.loginUser = async (req, res, next) => {
 };
 // DELETE USER
 exports.deleteUser = async (req, res, next) => {
+  // Get user ID from request parameters
   const userId = req.params.id;
 
   if (!userId) {
     return next(new AppError("User ID is required.", 400));
   }
-
+  // Find user by ID
   const user = await User.findByPk(userId);
-
+  // If user not found, return 404
   if (!user) {
     return next(new AppError("User not found.", 404));
   }
-
+  // Delete user
   await user.destroy();
 
   res.status(200).json({

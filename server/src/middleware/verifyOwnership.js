@@ -1,4 +1,3 @@
-const { Blog } = require("../models");
 const AppError = require("../utils/appError");
 
 /**
