@@ -1,3 +1,4 @@
+const jwt = require("jsonwebtoken");
 const { User } = require("../models");
 const AppError = require("../utils/appError");
 const { verifyUserCredentials } = require("./authController");
@@ -50,12 +51,16 @@ exports.loginUser = async (req, res, next) => {
   try {
     // Authenticate user credentials
     const user = await verifyUserCredentials(username, password);
+
+    // Remove passwordHash from user data before sending response
+    const userData = user.toJSON();
+    delete userData.passwordHash;
+
     // Generate JWT payload
     const payload = {
-      user_id: user.user_id,
-      email: user.email,
-      name: user.name,
+      id: user.id,
     };
+
     // Generate access token
     const accessToken = jwt.sign(payload, process.env.JWT_SECRET, {
       expiresIn: process.env.JWT_EXPIRY_TIME,
@@ -65,8 +70,7 @@ exports.loginUser = async (req, res, next) => {
       status: "Success",
       message: "User logged in successfully!",
       accessToken,
-      name: user.name,
-      user_id: user.user_id,
+      data: { userData },
     });
   } catch (error) {
     next(error);

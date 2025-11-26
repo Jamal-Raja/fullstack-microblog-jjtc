@@ -1,11 +1,11 @@
 const bcrypt = require("bcryptjs");
-const User = require("../../server");
+const User = require("../models/userModel");
 const AppError = require("../utils/appError");
 
 /**
  * verifyUserCredentials
  *
- * Validates a user's email and password.
+ * Validates a user's username and password.
  * Returns the user record (including password) if authentication succeeds.
  */
 exports.verifyUserCredentials = async (username, password) => {
@@ -20,7 +20,7 @@ exports.verifyUserCredentials = async (username, password) => {
   }
 
   // Compare provided password with stored hashed password
-  const passwordMatches = await bcrypt.compare(password, user.password);
+  const passwordMatches = await bcrypt.compare(password, user.passwordHash);
 
   if (!passwordMatches) {
     throw new AppError(errorMessage, 401);
