@@ -7,9 +7,12 @@ const router = express.Router();
 
 // === POST ROUTES ===
 // Public
-// router.route("/").get(postController.getAllPosts);
+router.route("/").get(postController.getAllPosts);
 
 // Private (user must be logged in)
-// router.route("/:id").get(postController.getPostById);
+router
+  .route("/:id")
+  .get(postController.getPostById)
+  .delete(postController.deletePostById); // TODO: Add authentication & authorization middleware
 
 module.exports = router;
