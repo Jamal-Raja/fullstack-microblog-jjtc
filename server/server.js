@@ -1,13 +1,13 @@
 const ensureDatabaseExists = require("./src/config/create-db");
-const globalErrorHandler = require("./middleware/globalErrorHandler");
-const sequalizeErrorHandler = require("./middleware/sequalizeErrorHandler");
+const globalErrorHandler = require("./src/middleware/globalErrorHandler");
+const sequalizeErrorHandler = require("./src/middleware/sequalizeErrorHandler");
 const sequelize = require("./src/config/database-config");
 
 const express = require("express");
 const app = express();
 
 // ROUTES
-const userRotes = require("./routes/userRoutes");
+const userRotes = require("./src/routes/userRoutes");
 
 // MIDDLEWARE
 app.use(express.json());

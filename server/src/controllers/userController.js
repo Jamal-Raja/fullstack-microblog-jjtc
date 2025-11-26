@@ -1,6 +1,8 @@
-const { User } = require("../src/models");
+const { User } = require("../models");
 const AppError = require("../utils/appError");
+const { verifyUserCredentials } = require("./authController");
 
+// FETCH ALL USERS
 exports.fetchAllUsers = async (req, res, next) => {
   const allUsers = await User.findAll();
 
@@ -11,7 +13,7 @@ exports.fetchAllUsers = async (req, res, next) => {
     data: allUsers,
   });
 };
-
+// REGISTER NEW USER
 exports.registerUser = async (req, res, next) => {
   if (!req.body) {
     return next(new AppError("No data provided.", 400));
@@ -26,7 +28,6 @@ exports.registerUser = async (req, res, next) => {
       )
     );
   }
-
   // Create new user in DB
   const newUser = await User.create({
     username,
@@ -42,12 +43,32 @@ exports.registerUser = async (req, res, next) => {
       user: newUser,
     },
   });
+};
+// LOGIN USER
+exports.loginUser = async (req, res, next) => {
+  const { username, password } = req.body;
+  try {
+    // Authenticate user credentials
+    const user = await verifyUserCredentials(username, password);
+    // Generate JWT payload
+    const payload = {
+      user_id: user.user_id,
+      email: user.email,
+      name: user.name,
+    };
+    // Generate access token
+    const accessToken = jwt.sign(payload, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRY_TIME,
+    });
 
-  // //   return res.status(201).json({
-  // //     status: "success",
-  // //     message: "User registered successfully.",
-  // //     data: {
-  // //       user: newUser,
-  // //     },
-  //   });
+    res.status(200).json({
+      status: "Success",
+      message: "User logged in successfully!",
+      accessToken,
+      name: user.name,
+      user_id: user.user_id,
+    });
+  } catch (error) {
+    next(error);
+  }
 };
