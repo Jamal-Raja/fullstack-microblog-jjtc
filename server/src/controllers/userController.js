@@ -76,3 +76,25 @@ exports.loginUser = async (req, res, next) => {
     next(error);
   }
 };
+// DELETE USER
+exports.deleteUser = async (req, res, next) => {
+  const userId = req.params.id;
+
+  if (!userId) {
+    return next(new AppError("User ID is required.", 400));
+  }
+
+  const user = await User.findByPk(userId);
+
+  if (!user) {
+    return next(new AppError("User not found.", 404));
+  }
+
+  await user.destroy();
+
+  res.status(200).json({
+    status: "success",
+    message: "User deleted successfully.",
+    user: user,
+  });
+};
