@@ -112,7 +112,7 @@ exports.getUserPosts = async (req, res, next) => {
   res.status(200).json({
     status: "success",
     message: `Fetching posts for user with ID: ${userId}`,
-    results: userPosts.length,Ad
+    results: userPosts.length,
     data: userPosts,
   });
 };
