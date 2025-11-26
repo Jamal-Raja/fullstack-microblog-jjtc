@@ -10,6 +10,9 @@ router.route("/").get(userController.fetchAllUsers);
 router.route("/register").post(userController.registerUser);
 router.route("/login").post(userController.loginUser);
 
+// Get all posts by a specific user
+router.route("/:id/posts").get(userController.getUserPosts);
+
 // Private (user must be logged in)
 router
   .route("/:id")

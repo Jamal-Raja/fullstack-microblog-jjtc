@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { User } = require("../models");
+const { User, Post } = require("../models");
 const AppError = require("../utils/appError");
 const { verifyUserCredentials } = require("./authController");
 
@@ -99,5 +99,20 @@ exports.deleteUser = async (req, res, next) => {
     status: "success",
     message: "User deleted successfully.",
     user: user,
+  });
+};
+// GET USER POSTS
+exports.getUserPosts = async (req, res, next) => {
+  const userId = req.params.id;
+
+  const userPosts = await Post.findAll({
+    where: { user_id: userId },
+  });
+
+  res.status(200).json({
+    status: "success",
+    message: `Fetching posts for user with ID: ${userId}`,
+    results: userPosts.length,Ad
+    data: userPosts,
   });
 };
