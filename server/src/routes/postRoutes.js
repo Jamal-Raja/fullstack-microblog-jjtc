@@ -1,7 +1,6 @@
 const express = require("express");
 const postController = require("../controllers/postController");
-// const { authenticateToken } = require("../middleware/authenticateToken");
-// const { verifyOwnership } = require("../middleware/verifyOwnership");
+const { authenticateToken } = require("../middleware/authenticateToken");
 
 const router = express.Router();
 
@@ -16,8 +15,7 @@ router
 router
   .route("/:id")
   .get(postController.getPostById)
-  .delete(postController.deletePostById)
-  .patch(postController.updatePostById);
+  .delete(authenticateToken, postController.deletePostById)
+  .patch(authenticateToken, postController.updatePostById);
 
-//   TO DO: Add authentication & ownership verification middleware for delete & update routes
 module.exports = router;
