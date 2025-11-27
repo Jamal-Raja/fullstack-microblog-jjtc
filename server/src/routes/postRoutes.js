@@ -7,7 +7,10 @@ const router = express.Router();
 
 // === POST ROUTES ===
 // Public
-router.route("/").get(postController.getAllPosts);
+router
+  .route("/")
+  .get(postController.getAllPosts)
+  .post(postController.createPost);
 
 // Private (user must be logged in)
 router

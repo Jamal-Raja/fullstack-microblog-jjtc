@@ -45,3 +45,24 @@ exports.deletePostById = async (req, res, next) => {
     message: "Post deleted successfully.",
   });
 };
+
+exports.createPost = async (req, res, next) => {
+  const { title, content, imageURL, user_id } = req.body;
+
+  if (!title || !content || !user_id) {
+    return next(new AppError("Title, content, and user_id are required", 400));
+  }
+
+  const newPost = await Post.create({
+    title,
+    content,
+    imageURL,
+    user_id,
+  });
+
+  res.status(201).json({
+    status: "success",
+    message: "Post created successfully.",
+    data: newPost,
+  });
+};
