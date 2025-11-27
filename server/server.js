@@ -11,11 +11,13 @@ const app = express();
 // ROUTES
 const userRoutes = require("./src/routes/userRoutes");
 const postRoutes = require("./src/routes/postRoutes");
+const postRoutes = require("./src/routes/commentRoutes");
 
 // MIDDLEWARE
 app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
+app.use("/api/comments", commentRoutes);
 
 app.use(sequalizeErrorHandler);
 app.use(globalErrorHandler);
