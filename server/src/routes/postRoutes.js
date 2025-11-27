@@ -16,6 +16,8 @@ router
 router
   .route("/:id")
   .get(postController.getPostById)
-  .delete(postController.deletePostById); // TODO: Add authentication & authorization middleware
+  .delete(postController.deletePostById)
+  .patch(postController.updatePostById);
 
+//   TO DO: Add authentication & ownership verification middleware for delete & update routes
 module.exports = router;
