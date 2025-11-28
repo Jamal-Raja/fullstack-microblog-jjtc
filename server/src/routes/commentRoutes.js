@@ -5,11 +5,11 @@ const { authenticateToken } = require("../middleware/authenticateToken");
 const router = express.Router();
 
 // === COMMENT ROUTES ===
-// Public & Private Routes
+// Handle all comment actions for a specific post
 router
   .route("/:post_id")
-  .get(commentController.getAllComments)
-  .post(authenticateToken, commentController.createComment)
-  .delete(authenticateToken, commentController.deleteComment);
+  .get(commentController.getAllComments)                 // Fetch all comments for a post
+  .post(authenticateToken, commentController.createComment) // Add a new comment (requires auth)
+  .delete(authenticateToken, commentController.deleteComment); // Delete a comment (requires auth)
 
 module.exports = router;

@@ -5,17 +5,17 @@ const { authenticateToken } = require("../middleware/authenticateToken");
 const router = express.Router();
 
 // === POST ROUTES ===
-// Public
+// Routes for creating and retrieving posts are public
 router
   .route("/")
-  .get(postController.getAllPosts)
-  .post(postController.createPost);
+  .get(postController.getAllPosts) // Fetch all posts
+  .post(postController.createPost); // Create a new post
 
-// Private (user must be logged in)
+// Routes for actions on a specific post
 router
   .route("/:id")
-  .get(postController.getPostById)
-  .delete(authenticateToken, postController.deletePostById)
-  .patch(authenticateToken, postController.updatePostById);
+  .get(postController.getPostById) // Fetch a single post by ID
+  .delete(authenticateToken, postController.deletePostById) // Delete a post (requires auth)
+  .patch(authenticateToken, postController.updatePostById); // Update a post (requires auth)
 
 module.exports = router;

@@ -4,6 +4,7 @@ const AppError = require("../utils/appError");
 const { verifyUserCredentials } = require("./authController");
 
 // FETCH ALL USERS
+// Returns all registered users
 exports.fetchAllUsers = async (req, res, next) => {
   const allUsers = await User.findAll();
 
@@ -14,13 +15,17 @@ exports.fetchAllUsers = async (req, res, next) => {
     data: allUsers,
   });
 };
+
 // REGISTER NEW USER
+// Validates input and creates a new user record
 exports.registerUser = async (req, res, next) => {
   if (!req.body) {
     return next(new AppError("No data provided.", 400));
   }
+
   const { username, email, password, passwordConfirmation } = req.body;
 
+  // Ensure required fields are present
   if (!username || !email || !password || !passwordConfirmation) {
     return next(
       new AppError(
@@ -29,14 +34,16 @@ exports.registerUser = async (req, res, next) => {
       )
     );
   }
-  // Create new user in DB
+
+  // Create a new user in the database
   const newUser = await User.create({
     username,
     email,
     password,
     passwordConfirmation,
   });
-  // Remove passwordHash from user data before sending response
+
+  // Remove sensitive hash before responding
   delete newUser.dataValues.passwordHash;
 
   res.status(201).json({
@@ -47,23 +54,26 @@ exports.registerUser = async (req, res, next) => {
     },
   });
 };
+
 // LOGIN USER
+// Authenticates credentials, generates JWT, and returns user data
 exports.loginUser = async (req, res, next) => {
   const { username, password } = req.body;
+
   try {
-    // Authenticate user credentials
+    // Verify username and password
     const user = await verifyUserCredentials(username, password);
 
-    // Remove passwordHash from user data before sending response
+    // Prepare safe user data for response
     const userData = user.toJSON();
     delete userData.passwordHash;
 
-    // Generate JWT payload
+    // Build JWT payload
     const payload = {
       id: user.id,
     };
 
-    // Generate access token
+    // Sign access token
     const accessToken = jwt.sign(payload, process.env.JWT_SECRET, {
       expiresIn: process.env.JWT_EXPIRY_TIME,
     });
@@ -78,21 +88,24 @@ exports.loginUser = async (req, res, next) => {
     next(error);
   }
 };
+
 // DELETE USER
+// Removes a user account by ID
 exports.deleteUser = async (req, res, next) => {
-  // Get user ID from request parameters
   const userId = req.params.id;
 
   if (!userId) {
     return next(new AppError("User ID is required.", 400));
   }
-  // Find user by ID
+
+  // Look up the user
   const user = await User.findByPk(userId);
-  // If user not found, return 404
+
   if (!user) {
     return next(new AppError("User not found.", 404));
   }
-  // Delete user
+
+  // Remove user from database
   await user.destroy();
 
   res.status(200).json({
@@ -101,7 +114,9 @@ exports.deleteUser = async (req, res, next) => {
     user: user,
   });
 };
+
 // GET USER POSTS
+// Retrieves all posts authored by a specific user
 exports.getUserPosts = async (req, res, next) => {
   const userId = req.params.id;
 
