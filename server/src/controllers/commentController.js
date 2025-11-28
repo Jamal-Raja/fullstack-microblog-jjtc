@@ -3,13 +3,15 @@ const AppError = require("../utils/appError");
 
 // FETCH ALL COMMENTS
 exports.getAllComments = async (req, res, next) => {
-  const postID = req.params.id;
+  const postID = req.params.post_id;
 
   if (!postID) {
-    return next(new AppError("postID is required in params", 400));
+    return next(new AppError("post_id is required in params", 400));
   }
 
-  const comments = await Comment.findAll({ where: { post_id: postID } });
+  const comments = await Comment.findAll({
+    where: { post_id: Number(postID) },
+  });
 
   res.status(200).json({
     status: "success",
@@ -19,9 +21,9 @@ exports.getAllComments = async (req, res, next) => {
 };
 // CREATE NEW COMMENT
 exports.createComment = async (req, res, next) => {
-  const postID = req.params.id;
+  const postID = req.params.post_id;
 
-  const postExists = await Post.findByPk(postID);
+  const postExists = await Post.findByPk(Number(postID));
 
   if (!postExists) {
     return next(new AppError("Post not found", 404));
