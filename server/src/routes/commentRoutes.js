@@ -4,10 +4,11 @@ const { authenticateToken } = require("../middleware/authenticateToken");
 
 const router = express.Router();
 
-// === POST ROUTES ===
-// Public
+// === COMMENT ROUTES ===
+// Public & Private Routes
 router
-  .route("/")
+  .route("/:post_id")
+  .get(commentController.getAllComments)
   .post(authenticateToken, commentController.createComment)
   .delete(authenticateToken, commentController.deleteComment);
 
