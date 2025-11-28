@@ -14,6 +14,20 @@ const Comment = sequelize.define("Comment", {
       },
     },
   },
+  // Foreign key referencing the user who made the comment
+  user_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "Users",
+    },
+  },
+  // Foreign key referencing which post the comment belongs to
+  post_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "Posts",
+    },
+  },
 });
 
 module.exports = Comment;

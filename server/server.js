@@ -1,12 +1,28 @@
+// IMPORTS & INITIALIZATIONS
+require("./src/models/index");
 const ensureDatabaseExists = require("./src/config/create-db");
+const globalErrorHandler = require("./src/middleware/globalErrorHandler");
+const sequalizeErrorHandler = require("./src/middleware/sequalizeErrorHandler");
 const sequelize = require("./src/config/database-config");
 
 const express = require("express");
 const app = express();
 
-// Import models to sync with database
-require("./src/models/index");
+// ROUTES
+const userRoutes = require("./src/routes/userRoutes");
+const postRoutes = require("./src/routes/postRoutes");
+const commentRoutes = require("./src/routes/commentRoutes");
 
+// MIDDLEWARE
+app.use(express.json());
+app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
+app.use("/api/comments", commentRoutes);
+
+app.use(sequalizeErrorHandler);
+app.use(globalErrorHandler);
+
+// START SERVER & CONNECT TO DB
 const runServer = async () => {
   try {
     console.log("Attempting to connect to MySQL DB...");

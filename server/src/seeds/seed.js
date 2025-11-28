@@ -12,6 +12,7 @@ const seedDB = async () => {
   try {
     // Sync database and clear existing data
     await sequelize.sync({ force: true });
+    // Seed users, posts, and comments
     await User.bulkCreate(userdata, { individualHooks: true });
     await Post.bulkCreate(postdata, { individualHooks: true });
     await Comment.bulkCreate(commentdata, { individualHooks: true });
