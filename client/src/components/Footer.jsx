@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer style={{ padding: "1rem", background: "#ddd", marginTop: "2rem" }}>
+  <footer className="flex justify-center p-4 bg-neutral-100 text-neutral-500">
     <p>© jjtc. All rights reserved.</p>
   </footer>
 );
