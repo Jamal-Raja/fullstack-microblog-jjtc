@@ -1,6 +1,7 @@
 const User = require("../models/userModel");
 const Post = require("../models/postModel");
 const Comment = require("../models/commentModel");
+const Message = require("../models/messageModel");
 
 // A user can create many posts (one-to-many relationship)
 User.hasMany(Post, {
@@ -35,4 +36,17 @@ Comment.belongsTo(Post, {
   foreignKey: "post_id",
 });
 
-module.exports = { User, Post, Comment };
+// === Message Model Associations ===
+// A user can send many messages (one-to-many relationship)
+Message.belongsTo(User, {
+  foreignKey: "sender_id",
+  as: "sender",
+});
+
+// A user can receive many messages (one-to-many relationship)
+Message.belongsTo(User, {
+  foreignKey: "receiver_id",
+  as: "receiver",
+});
+
+module.exports = { User, Post, Comment, Message };
