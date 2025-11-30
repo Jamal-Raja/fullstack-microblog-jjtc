@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Hero from "./components/Hero";
 import { AuthProvider } from "./context/AuthContext";
+import Messages from "./pages/Messages";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/messages" element={<Messages />} />
           </Routes>
         </main>
         <Hero />
