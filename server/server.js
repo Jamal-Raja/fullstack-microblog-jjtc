@@ -6,18 +6,34 @@ const sequalizeErrorHandler = require("./src/middleware/sequalizeErrorHandler");
 const sequelize = require("./src/config/database-config");
 
 const express = require("express");
+const { createServer } = require("http");
+const { Server } = require("socket.io");
+
+// EXPRESS INITIALISATION
 const app = express();
+const server = createServer(app);
+
+// SOCKET.IO INITIALISATION
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+});
+
 
 // ROUTES
 const userRoutes = require("./src/routes/userRoutes");
 const postRoutes = require("./src/routes/postRoutes");
 const commentRoutes = require("./src/routes/commentRoutes");
+const messageRoutes = require("./src/routes/messageRoutes");
 
 // MIDDLEWARE
 app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
+app.use("/api/messages", messageRoutes);
 
 app.use(sequalizeErrorHandler);
 app.use(globalErrorHandler);
@@ -43,7 +59,7 @@ const runServer = async () => {
 
     // Starts the Express server
     const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => {
+    server.listen(PORT, () => {
       console.log(
         "\x1b[1m\x1b[33m%s\x1b[0m",
         `Server Running on --> http://localhost:${PORT}`
