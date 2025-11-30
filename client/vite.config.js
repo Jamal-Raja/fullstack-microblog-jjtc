@@ -9,6 +9,5 @@ export default defineConfig({
   // This allows the dev server to be accessed over the local network
   server: {
     host: true,
-    port: 6969,
   },
 });
