@@ -6,11 +6,13 @@ const sequalizeErrorHandler = require("./src/middleware/sequalizeErrorHandler");
 const sequelize = require("./src/config/database-config");
 
 const express = require("express");
+const cors = require("cors");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 
 // EXPRESS INITIALISATION
 const app = express();
+
 const server = createServer(app);
 
 // SOCKET.IO INITIALISATION
@@ -38,6 +40,7 @@ const messageRoutes = require("./src/routes/messageRoutes");
 
 // MIDDLEWARE
 app.use(express.json());
+app.use(cors());
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
