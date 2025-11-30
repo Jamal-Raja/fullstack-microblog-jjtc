@@ -7,33 +7,12 @@ import {
   MessageCircle,
   Repeat,
 } from "lucide-react";
+import Sidebar from "../components/Sidebar";
 
 const Home = () => (
   <div className="flex min-h-screen bg-white text-black">
     {/* Sidebar */}
-    <aside className="w-64 border-r border-gray-200 p-4">
-      <div className="flex items-center gap-2 mb-6">
-        <input
-          type="text"
-          placeholder="Search"
-          className="w-full border border-gray-300 rounded-lg p-2 text-sm"
-        />
-      </div>
-
-      <nav className="space-y-5 text-md">
-        <div className="flex items-center gap-2 cursor-pointer font-semibold">
-          <HomeIcon />
-          <span>Home</span>
-        </div>
-        <div className="flex items-center gap-2 cursor-pointer">
-          <Search /> <span>Search</span>
-        </div>
-        <div className="flex items-center gap-2 cursor-pointer">
-          <User />
-          <span>Account</span>
-        </div>
-      </nav>
-    </aside>
+    <Sidebar />
 
     {/* Main content */}
     <main className="flex-1 p-6">
