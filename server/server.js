@@ -17,10 +17,18 @@ const server = createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
-    methods: ["GET", "POST"],
+    // methods: ["GET", "POST"],
   },
 });
 
+io.on("connection", (socket) => {
+  console.log("A user connected with ID --> " + socket.id);
+
+  socket.on("send-msg", (msg) => {
+    socket.broadcast.emit("receive-msg", msg);
+    console.log(msg);
+  });
+});
 
 // ROUTES
 const userRoutes = require("./src/routes/userRoutes");
