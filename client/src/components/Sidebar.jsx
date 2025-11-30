@@ -1,4 +1,4 @@
-import { HomeIcon, MessageCircle, Search, User } from "lucide-react";
+import { House, MessageCircle, Search, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
@@ -17,27 +17,27 @@ function Sidebar() {
         <nav className="space-y-5 text-md">
           {/* Home */}
           <Link to="/">
-            <div className="flex items-center gap-2 cursor-pointer font-semibold">
-              <HomeIcon />
+            <div className="flex items-center gap-2 cursor-pointer font-semibold mb-3">
+              <House />
               <span>Home</span>
             </div>
           </Link>
           {/* Search */}
           <Link to="">
-            <div className="flex items-center gap-2 cursor-pointer">
+            <div className="flex items-center gap-2 cursor-pointer mb-3">
               <Search /> <span>Search</span>
             </div>
           </Link>
           {/* Account */}
           <Link to="">
-            <div className="flex items-center gap-2 cursor-pointer">
+            <div className="flex items-center gap-2 cursor-pointer mb-3">
               <User />
               <span>Account</span>
             </div>
           </Link>
           {/* Messages */}
           <Link to="/messages">
-            <div className="flex items-center gap-2 cursor-pointer">
+            <div className="flex items-center gap-2 cursor-pointer mb-3">
               <MessageCircle />
               <span>Messages</span>
             </div>

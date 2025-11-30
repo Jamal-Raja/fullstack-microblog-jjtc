@@ -1,12 +1,5 @@
 // Icons from Lucide
-import {
-  Home as HomeIcon, // Home component already exists
-  Search,
-  User,
-  Heart,
-  MessageCircle,
-  Repeat,
-} from "lucide-react";
+import { Heart, MessageCircle, Repeat } from "lucide-react";
 import Sidebar from "../components/Sidebar";
 
 const Home = () => (
@@ -19,7 +12,7 @@ const Home = () => (
       {/* Tabs */}
       <div className="flex gap-6 border-b border-gray-200 pb-2 mb-6 font-medium text-sm">
         <button className="border-b-2 border-black pb-2">For you</button>
-        <button className="text-gray-500">Following</button>
+        <button className="text-gray-500 pb-2">Following</button>
       </div>
 
       {/* Post input box */}
