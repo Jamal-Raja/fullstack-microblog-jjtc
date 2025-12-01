@@ -14,7 +14,7 @@ function Hero() {
         <hr className="w-50 mx-auto my-8 border-teal-600"></hr>
         <div className="flex items-center justify-center transition-all duration-500">
           <button className="px-6 py-2 mx-2 text-2xl rounded-3xl bg-blue-800 hover:bg-blue-950 text-white shadow-lg transition-all hover:scale-95">
-            Sign In
+            Log In
           </button>
           <button className="px-6 py-2 mx-2 text-2xl rounded-3xl bg-teal-300 hover:bg-teal-600 text-gray-800 shadow-lg transition-all hover:scale-95">
             Register

@@ -7,7 +7,7 @@ DB_HOST=localhost
 # SERVER SETTINGS
 PORT=6969
 URL =
-
+fullstack-microblog-jjtc
 # JWT 
-JWT_SECRET=
+JWT_SECRET=jamalisthebest!
 JWT_EXPIRY_TIME=1h
