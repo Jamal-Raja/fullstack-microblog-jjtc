@@ -6,7 +6,7 @@
     "email": "alex@example.com",
     "passwordHash": "$2a$12$hgtEiqnYk.OKW.U8IR12SOv3FzAq4kJGn9qWjsy1CMX2x4Vw1rILK",
     "bio": "Business writer and tech enthusiast.",
-    "avatarURL": "https://example.com/avatars/alex.png",
+    "avatarURL": "https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Leonard-Hofstadter.The-Big-Bang-Theory.webp",
     "createdAt": "2025-01-10T10:00:00Z",
     "updatedAt": "2025-01-10T10:00:00Z"
   },
@@ -17,7 +17,7 @@
     "email": "sophia@example.com",
     "passwordHash": "$2a$12$uEHjwdiiF6QOobxIYTK8uuQSh9tZxM0U7uJmRsyvY9ZqGHR95y6QK",
     "bio": "Traveller and photographer.",
-    "avatarURL": "https://example.com/avatars/sophia.jpg",
+    "avatarURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/03/14/09/big-bang-theory-sheldon-cooper.jpeg?width=1200",
     "createdAt": "2025-01-11T14:20:00Z",
     "updatedAt": "2025-01-11T14:20:00Z"
   },
@@ -28,7 +28,7 @@
     "email": "daniel@example.com",
     "passwordHash": "$2a$12$H6w8CRO1pMm95YUxZr7N9uXia4HtuQnG/d8HvEhnGfO01F5e77myC",
     "bio": "Sports fan and casual blogger.",
-    "avatarURL": null,
+    "avatarURL": "https://www.writeups.org/wp-content/uploads/Penny-Big-Bang-Theory-Kaley-Cuoco.jpg",
     "createdAt": "2025-01-13T09:45:00Z",
     "updatedAt": "2025-01-13T09:45:00Z"
   }

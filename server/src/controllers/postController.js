@@ -1,10 +1,15 @@
-const { Post } = require("../models");
+const { Post, User } = require("../models");
 const AppError = require("../utils/appError");
 
 // FETCH ALL POSTS
 // Returns a list of all posts in the database
 exports.getAllPosts = async (req, res, next) => {
-  const posts = await Post.findAll();
+  const posts = await Post.findAll({
+    include: {
+      model: User,
+      attributes: ["username", "displayName", "avatarURL"] 
+    }
+  });
 
   res.status(200).json({
     status: "success",
