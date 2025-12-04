@@ -70,7 +70,7 @@ const Register = () => {
         <input
         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
           name="username"
-          defaultValue="bob_marley123"
+          defaultValue="test"
           type="text"
           placeholder="Username"
           required
@@ -78,7 +78,7 @@ const Register = () => {
         <input
         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
           name="email"
-          defaultValue="bob_marley123@gmail.com"
+          defaultValue="test@example.com"
           type="email"
           placeholder="Email"
           required

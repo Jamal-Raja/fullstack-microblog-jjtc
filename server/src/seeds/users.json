@@ -5,10 +5,10 @@
     "displayName": "Alex Walker",
     "email": "alex@example.com",
     "passwordHash": "$2a$12$hgtEiqnYk.OKW.U8IR12SOv3FzAq4kJGn9qWjsy1CMX2x4Vw1rILK",
-    "bio": "Business writer and tech enthusiast.",
-    "avatarURL": "https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Leonard-Hofstadter.The-Big-Bang-Theory.webp",
+    "bio": "Business writer and tech enthusiast. Follow me for productivity tips and dev insights.",
+    "avatarURL": "https://picsum.photos/id/64/150/150",
     "createdAt": "2025-01-10T10:00:00Z",
-    "updatedAt": "2025-01-10T10:00:00Z"
+    "updatedAt": "2025-02-25T07:45:00Z"
   },
   {
     "id": 2,
@@ -16,10 +16,10 @@
     "displayName": "Sophia Mills",
     "email": "sophia@example.com",
     "passwordHash": "$2a$12$uEHjwdiiF6QOobxIYTK8uuQSh9tZxM0U7uJmRsyvY9ZqGHR95y6QK",
-    "bio": "Traveller and photographer.",
-    "avatarURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/03/14/09/big-bang-theory-sheldon-cooper.jpeg?width=1200",
+    "bio": "Traveller and photographer. Always looking for the next great adventure and perfect landscape shot.",
+    "avatarURL": "https://picsum.photos/id/68/150/150",
     "createdAt": "2025-01-11T14:20:00Z",
-    "updatedAt": "2025-01-11T14:20:00Z"
+    "updatedAt": "2025-02-27T12:30:00Z"
   },
   {
     "id": 3,
@@ -27,9 +27,141 @@
     "displayName": "Daniel Roberts",
     "email": "daniel@example.com",
     "passwordHash": "$2a$12$H6w8CRO1pMm95YUxZr7N9uXia4HtuQnG/d8HvEhnGfO01F5e77myC",
-    "bio": "Sports fan and casual blogger.",
-    "avatarURL": "https://www.writeups.org/wp-content/uploads/Penny-Big-Bang-Theory-Kaley-Cuoco.jpg",
+    "bio": "Sports fan and casual blogger. Community spirit, local clubs, and a bit of gardening on the side.",
+    "avatarURL": "https://picsum.photos/id/40/150/150",
     "createdAt": "2025-01-13T09:45:00Z",
-    "updatedAt": "2025-01-13T09:45:00Z"
+    "updatedAt": "2025-02-05T15:15:00Z"
+  },
+  {
+    "id": 4,
+    "username": "emilychen",
+    "displayName": "Emily Chen",
+    "email": "emily@example.com",
+    "passwordHash": "$2a$12$nQ7v5yZf1Xy.pT4R3J2GQuE0sO8gA7hM0l5yV6gH1KqP5sA9oQ5f",
+    "bio": "Homebrewer and logistics specialist. Craft beer, blockchain, and everything in between.",
+    "avatarURL": "https://picsum.photos/id/50/150/150",
+    "createdAt": "2025-01-16T11:30:00Z",
+    "updatedAt": "2025-02-09T13:25:00Z"
+  },
+  {
+    "id": 5,
+    "username": "jordanpark",
+    "displayName": "Jordan Park",
+    "email": "jordan@example.com",
+    "passwordHash": "$2a$12$Vw2zD4yG3tU.rO9S1Q0H9uS2rT8eL3oA6jI7hX8mZ9qC4pW3iL8jO",
+    "bio": "Fashion designer committed to sustainability and ethical sourcing. Look good, do good!",
+    "avatarURL": "https://picsum.photos/id/52/150/150",
+    "createdAt": "2025-01-18T15:00:00Z",
+    "updatedAt": "2025-01-22T14:45:00Z"
+  },
+  {
+    "id": 6,
+    "username": "michaelscott",
+    "displayName": "Michael Scott",
+    "email": "michael@example.com",
+    "passwordHash": "$2a$12$G8h9jK6lL4tU.sO3R5Q1L7uX3eY6fJ0bM1vC2xP0wF8aD7hX6vY5z",
+    "bio": "Amateur chef and fitness fanatic. Quick, healthy recipes for the working week.",
+    "avatarURL": "https://picsum.photos/id/56/150/150",
+    "createdAt": "2025-01-20T08:00:00Z",
+    "updatedAt": "2025-01-28T12:00:00Z"
+  },
+  {
+    "id": 7,
+    "username": "lisamartin",
+    "displayName": "Lisa Martin",
+    "email": "lisa@example.com",
+    "passwordHash": "$2a$12$J1k2lM3oN4pQ.rS5T6uV7wX8yZ0aB1cE2dF3gH4iJ5kL6mN7oP8qR",
+    "bio": "Wildlife photographer focusing on conservation. Capturing the beauty of the natural world, one frame at a time. Also, a fungi enthusiast!",
+    "avatarURL": "https://picsum.photos/id/88/150/150",
+    "createdAt": "2025-01-22T12:30:00Z",
+    "updatedAt": "2025-02-17T11:00:00Z"
+  },
+  {
+    "id": 8,
+    "username": "chriswilson",
+    "displayName": "Chris Wilson",
+    "email": "chris@example.com",
+    "passwordHash": "$2a$12$Q9rS5T6uV7wX8yZ0aB1cE2dF3gH4iJ5kL6mN7oP8qR.sT0uV1wX2y",
+    "bio": "Avid gamer and tech reviewer. My life is split between code and controllers. Currently exploring new RPGs.",
+    "avatarURL": "https://picsum.photos/id/84/150/150",
+    "createdAt": "2025-01-24T16:45:00Z",
+    "updatedAt": "2025-02-03T20:30:00Z"
+  },
+  {
+    "id": 9,
+    "username": "sarahjones",
+    "displayName": "Sarah Jones",
+    "email": "sarah@example.com",
+    "passwordHash": "$2a$12$A7bC8dE9fG0hI1jK2lM3nO4pQ5rS6tU7vW8xY9z0aB1cE2dF3gH4i",
+    "bio": "Wellness coach and yoga instructor. Promoting balance, energy, and mindful living.",
+    "avatarURL": "https://picsum.photos/id/95/150/150",
+    "createdAt": "2025-01-26T07:15:00Z",
+    "updatedAt": "2025-02-23T10:05:00Z"
+  },
+  {
+    "id": 10,
+    "username": "roberthall",
+    "displayName": "Robert Hall",
+    "email": "robert@example.com",
+    "passwordHash": "$2a$12$T6uV7wX8yZ0aB1cE2dF3gH4iJ5kL6mN7oP8qR.sT0uV1wX2yZ3aB4c",
+    "bio": "Animal rescue volunteer and advocate. Committed to finding forever homes for our furry friends.",
+    "avatarURL": "https://picsum.photos/id/79/150/150",
+    "createdAt": "2025-01-28T10:50:00Z",
+    "updatedAt": "2025-02-11T17:00:00Z"
+  },
+  {
+    "id": 11,
+    "username": "davidharrison",
+    "displayName": "David Harrison",
+    "email": "david@example.com",
+    "passwordHash": "$2a$12$H7w8CRO1pMm95YUxZr7N9uXia4HtuQnG/d8HvEhnGfO01F5e77myC",
+    "bio": "Financial analyst and long-term investor. Focusing on passive income and market stability.",
+    "avatarURL": "https://picsum.photos/id/92/150/150",
+    "createdAt": "2025-02-10T11:40:00Z",
+    "updatedAt": "2025-02-13T09:10:00Z"
+  },
+  {
+    "id": 12,
+    "username": "michellewright",
+    "displayName": "Michelle Wright",
+    "email": "michelle@example.com",
+    "passwordHash": "$2a$12$G1k2lM3oN4pQ.rS5T6uV7wX8yZ0aB1cE2dF3gH4iJ5kL6mN7oP8qR",
+    "bio": "DIY enthusiast and home renovator. Turning old spaces into beautiful, modern homes on a budget.",
+    "avatarURL": "https://picsum.photos/id/82/150/150",
+    "createdAt": "2025-02-12T13:20:00Z",
+    "updatedAt": "2025-02-15T14:50:00Z"
+  },
+  {
+    "id": 13,
+    "username": "aaronmitchell",
+    "displayName": "Aaron Mitchell",
+    "email": "aaron@example.com",
+    "passwordHash": "$2a$12$Q8rS5T6uV7wX8yZ0aB1cE2dF3gH4iJ5kL6mN7oP8qR.sT0uV1wX2y",
+    "bio": "Lifelong reader and fantasy genre fanatic. Always advocating for independent authors.",
+    "avatarURL": "https://picsum.photos/id/75/150/150",
+    "createdAt": "2025-02-14T17:00:00Z",
+    "updatedAt": "2025-02-21T16:20:00Z"
+  },
+  {
+    "id": 14,
+    "username": "vanessalee",
+    "displayName": "Vanessa Lee",
+    "email": "vanessa@example.com",
+    "passwordHash": "$2a$12$B9cD0eF1gH2iJ3kL4mN5oP6qR7sT8uV9wX0yZ1aB2cE3dF4gH5iJ",
+    "bio": "Productivity consultant and app reviewer. Helping people find the best tools to manage their time and energy.",
+    "avatarURL": "https://picsum.photos/id/61/150/150",
+    "createdAt": "2025-02-18T09:55:00Z",
+    "updatedAt": "2025-03-01T15:15:00Z"
+  },
+  {
+    "id": 15,
+    "username": "ethanjones",
+    "displayName": "Ethan Jones",
+    "email": "ethan@example.com",
+    "passwordHash": "$2a$12$C0eF1gH2iJ3kL4mN5oP6qR7sT8uV9wX0yZ1aB2cE3dF4gH5iJ6kL",
+    "bio": "Physics graduate and futurist. Breaking down complex science topics, from quantum theory to space travel.",
+    "avatarURL": "https://picsum.photos/id/55/150/150",
+    "createdAt": "2025-02-20T14:10:00Z",
+    "updatedAt": "2025-03-03T19:00:00Z"
   }
 ]

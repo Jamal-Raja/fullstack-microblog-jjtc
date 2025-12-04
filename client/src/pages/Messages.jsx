@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 // Importing socket.io client
 import { io } from "socket.io-client";
-import {Send} from 'lucide-react';
+import { Send } from "lucide-react";
 
 const Messages = () => {
   const [newMessage, setNewMessage] = useState("");
-  const [messages, setMessages] = useState(["MSG1", "MSG2", "MSG3"]);
+  const [messages, setMessages] = useState([
+    "Hey Hamza, how's your day treating you? Anything exciting happening?",
+    "It's been great, actually! I stopped on the way back and I'm watching the sunset from this old railway bridge—it's gorgeous.",
+    "Oh, that sounds amazing! You HAVE to send a quick pic! 📸",
+  ]);
   const [socket] = useState(() => io("http://localhost:6969"));
 
   // Initializing socket connection
@@ -43,13 +47,17 @@ const Messages = () => {
 
         {/* Main content */}
         <main className="flex-1 p-6">
-          <h1 className="text-center text-teal-600 font-bold text-3xl">Messages</h1>
+          <h1 className="text-center text-teal-600 font-bold text-3xl">
+            Messages
+          </h1>
           <div className="rounded-2xl shadow-md p-8 border-gray-200">
             <h1 className="font-bold p-3">All Messages</h1>
             {/* Messages list */}
-            <ul className="p-2 mb-2 [&>li:nth-child(odd)]:bg-gray-200">
+            <ul className="p-2 mb-2 [&>li:nth-child(odd)]:bg-gray-200 round">
               {messages.map((msg, index) => (
-                <li key={index}>{msg}</li>
+                <li className="rounded-2xl p-1 outline mb-2" key={index}>
+                  {msg}
+                </li>
               ))}
             </ul>
 
@@ -72,7 +80,7 @@ const Messages = () => {
                 }}
                 className="flex items-center justify-center p-3 text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95 cursor-pointer bg-teal-500 rounded-full"
               >
-                <Send size={20}/>
+                <Send size={20} />
               </button>
             </form>
           </div>
