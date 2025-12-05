@@ -35,15 +35,14 @@ const Register = () => {
         message: data.message,
         displayTime: 4000,
       });
-      
-      console.log(data)
+
+      console.log(data);
 
       // Wait 1 second, then redirect
       setTimeout(() => {
         navigate("/login");
       }, 1000);
       // Added redirection
-
     } catch (error) {
       console.error(error.response.data.message);
       setPopup({
@@ -64,11 +63,13 @@ const Register = () => {
           message={popup.message}
         />
       )}
-      <form onSubmit={registerUser}
-      className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-md space-y-4">
+      <form
+        onSubmit={registerUser}
+        className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-md space-y-4"
+      >
         <h2>Register</h2>
         <input
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
           name="username"
           defaultValue="test"
           type="text"
@@ -76,7 +77,7 @@ const Register = () => {
           required
         />
         <input
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
           name="email"
           defaultValue="test@example.com"
           type="email"
@@ -84,7 +85,7 @@ const Register = () => {
           required
         />
         <input
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
           name="password"
           defaultValue="12345678"
           type="password"
@@ -92,7 +93,7 @@ const Register = () => {
           required
         />
         <input
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition"
           name="passwordConfirmation"
           defaultValue="12345678"
           type="password"
